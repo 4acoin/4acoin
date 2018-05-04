@@ -1,20 +1,19 @@
-# Wellcome to CloudBank
+# Wellcome to 4A Coin
 
 It is the most popular and original CloudCoin python script. The code is exceptionally portable and has been used successfully on a very broad range of ubuntu systems and hardware.
 
 ## Contact
 
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/cloudbank-github/)
+
 [![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
 
-- Chat in [cloudbank-github channel on Gitter](https://gitter.im/cloudbank-github).
 - Report bugs, issues or feature requests using [GitHub issues](issues/new).
 
 
 
 ## Getting Started
 
-The CloudBank Documentation site hosts the **[CloudBank homepage](http://cloudbankproject.com/)**, which
+The 4a Coin Documentation site hosts the **[CloudBank homepage](http://4acoin.org/)**, which
 has a Quick Start section.
 
 Operating system | Status
@@ -49,7 +48,7 @@ pip install --upgrade virtualenv
 virtualenv -p python3 venv
 cd venv
 . bin/activate
-git clone https://github.com/omgbbqhaxx/cloudbankproject.git
+git clone https://github.com/4acoin/4acoin.git
 mv cloudbankproject cloudbank && cd cloudbank
 pip install -r requirements.txt
 pipenv install requests
@@ -79,7 +78,7 @@ ping
 
 ## 4p2p github helper comments.
 ```shell
-git clone https://github.com/omgbbqhaxx/cloudbankproject.git
+git clone https://github.com/4acoin/4acoin.git
 git pull
 git fetch --all
 git reset --hard origin/master
@@ -89,7 +88,7 @@ git reset --hard origin/master
 The simplest way to install it is to use pip, a tool for installing and managing Python packages:
 ```shell
 cd /opt/venv/bin
-wget https://raw.githubusercontent.com/omgbbqhaxx/cloudbankproject/master/gunicorn_start
+wget https://raw.githubusercontent.com/4acoin/4acoin/master/gunicorn_start
 chmod u+x gunicorn_start
 . gunicorn_start
 ```
@@ -142,7 +141,7 @@ NEWER FORGET TO CHANGE SERVER_NAME WITH YOUR IP ADDRESS FROM NGİNXCONF.!
 sudo apt-get install nginx
 sudo service nginx start
 cd /etc/nginx/sites-available
-wget https://raw.githubusercontent.com/omgbbqhaxx/cloudbankproject/master/nginxconf
+wget https://raw.githubusercontent.com/4acoin/4acoin/master/nginxconf
 ln -s /etc/nginx/sites-available/nginxconf /etc/nginx/sites-enabled/nginxconf
 cd /opt/venv/
 mkdir logs && cd logs
@@ -177,11 +176,6 @@ touch nginx-access.log && touch nginx-error.log
   * `receiverwalletallows`  receiver's wallet
   * `amount`  and amount.
   ___
-
-
-## Donations
-  * My ethereum wallet : `0xFBd6f9704478104f0EF3F4f9834c3621210fE598`
-  * My Nano wallet : `xrb_1ppmk9ki9kungyer845deysmwokfeughmojxuhorpn7fpiizmka7b3r5jj4z`
 
 ## License
 
