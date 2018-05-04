@@ -13,7 +13,7 @@ It is the most popular and original CloudCoin python script. The code is excepti
 
 ## Getting Started
 
-The 4a Coin Documentation site hosts the **[CloudBank homepage](http://4acoin.org/)**, which
+The 4a Coin Documentation site hosts the **[4A Coin homepage](http://4acoin.org/)**, which
 has a Quick Start section.
 
 Operating system | Status
