@@ -7,7 +7,7 @@ twisted[tls]==17.9.0
 aioredis==1.1.0
 pycrypto==2.6.1
 autobahn[twisted]==18.3.1
-bson==0.5.2
+bson==0.5.6
 ecdsa==0.13
 websocket-client==0.47.0
 arrow==0.12.1

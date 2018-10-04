@@ -216,8 +216,7 @@ class MyClientProtocol(WebSocketClientProtocol):
 
 
 def syncfirst():
-    r = requests.get('http://159.89.197.53/api/v1/alltransactions/')
-    alltrans = r.json()
+    alltrans = requests.get('http://188.166.77.61/api/v1/alltransactions/').json()
     for x in alltrans["alltestsarecomplated"]:
         try:
             mytransactions = transaction.objects.get(blockhash=x["blockhash"])

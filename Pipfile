@@ -1,0 +1,37 @@
+[[source]]
+
+name = "pypi"
+verify_ssl = true
+url = "https://pypi.python.org/simple"
+
+
+[dev-packages]
+
+
+
+[requires]
+
+python_version = "3.5"
+
+
+[packages]
+
+pytz = "==2018.3"
+netifaces = "==0.10.6"
+django = "==2.0.3"
+gunicorn = "==19.7.1"
+tornado = "==4.5.3"
+twisted = {extras = ["tls"], version = "==17.9.0"}
+aioredis = "==1.1.0"
+pycrypto = "==2.6.1"
+autobahn = {extras = ["twisted"], version = "==18.3.1"}
+bson = "==0.5.6"
+ecdsa = "==0.13"
+websocket-client = "==0.47.0"
+arrow = "==0.12.1"
+schedule = "==0.5.0"
+celery = "==4.2.0rc1"
+django-celery-results = "==1.0.1"
+django-celery-beat = "==1.1.1"
+pipenv = "==11.0.2"
+requests = "*"
