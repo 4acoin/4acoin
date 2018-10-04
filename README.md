@@ -1,11 +1,11 @@
 # Wellcome to 4A Coin
 
-It is the most popular and original CloudCoin python script. The code is exceptionally portable and has been used successfully on a very broad range of ubuntu systems and hardware.
+It is the most popular and original 4a Coin python script. The code is exceptionally portable and has been used successfully on a very broad range of ubuntu systems and hardware.
 
 ## Contact
 
 
-[![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
+[![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/4acoin/4acoin/issues)
 
 - Report bugs, issues or feature requests using [GitHub issues](issues/new).
 
@@ -18,8 +18,8 @@ has a Quick Start section.
 
 Operating system | Status
 ---------------- | ----------
-Ubuntu and macOS | [![TravisCI](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://travis-ci.org/cloudbank/cloudbank-github)
-Windows          | [![AppVeyor](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://ci.appveyor.com/project/cloudbank/cloudbank-github)
+Ubuntu and macOS | [![TravisCI](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://travis-ci.org/4acoin/4acoin-github)
+Windows          | [![AppVeyor](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://ci.appveyor.com/project/4acoin/4acoin-github)
 
 
 ```shell
@@ -49,7 +49,7 @@ virtualenv -p python3 venv
 cd venv
 . bin/activate
 git clone https://github.com/4acoin/4acoin.git
-mv cloudbankproject cloudbank && cd cloudbank
+cd 4acoin
 pip install -r requirements.txt
 pipenv install requests
 export DJANGO_SETTINGS_MODULE=cloudbank.settings
@@ -63,7 +63,7 @@ NEWER FORGET TO CHANGE PASSWORD WITH YOUR PW FROM REDİS.CONF.!
 ```shell
 pip install celery && sudo apt-get update -y && sudo apt-get install build-essential tcl -y && cd /tmp && curl -O http://download.redis.io/redis-stable.tar.gz && tar xzvf redis-stable.tar.gz && cd redis-stable && sudo make install && make && make test
 sudo mkdir /etc/redis && cd /etc/redis && wget https://gist.githubusercontent.com/omgbbqhaxx/03b31c2ed319bc987ddb7c8d77c33861/raw/d04c90c96e950c7fb2528774259c3843b20fb7a3/redis.conf
-cd /etc/systemd/system/ && wget  https://raw.githubusercontent.com/omgbbqhaxx/cloudbankproject/master/redis.service
+cd /etc/systemd/system/ && wget  https://raw.githubusercontent.com/omgbbqhax/cloudbankproject/master/redis.service
 sudo adduser --system --group --no-create-home redis
 sudo mkdir /var/lib/redis
 sudo chown redis:redis /var/lib/redis
