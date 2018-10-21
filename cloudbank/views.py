@@ -170,6 +170,7 @@ def sendcloudcoin(request):
             allify['explain'] = "insufficient balance"
             return HttpResponse(json.dumps(allify), content_type = "application/json")
         else:
+            print("decimal",amount)
             utc = arrow.utcnow()
             local = utc.to('GMT')
             first_timestamp = local.timestamp
@@ -193,7 +194,7 @@ def sendcloudcoin(request):
             print("digital sign ishere", datashash.encode('utf-8'))
             digitalSignature = sk.sign(datashash.encode('utf-8'))
             digitalSignature = json.dumps(digitalSignature.hex())
-
+            print(amount)
             wllt = generate_wallet_from_pkey(sender)
             newtrans = transaction(sender=sender,
             senderwallet=wllt,

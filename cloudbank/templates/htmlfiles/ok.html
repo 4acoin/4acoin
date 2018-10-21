@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="/static/css/messenger.css">
 <link rel="stylesheet" href="/static/css/messenger-theme-future.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/js/messenger.min.js"></script>
+<script src="/static/js/qr.min.js"></script>
+
+
 
 <style>
 .header{
@@ -27,7 +30,7 @@
 .content {
   margin: 0 auto;
   width: 550px;
-  height: 525px;
+  height: 585px;
   background-color: white;
   position: relative;
   top:186px;
@@ -117,6 +120,7 @@ a:link {
 <center><input type="button" id="okey" value="Send" class="btn"></center>
 <br>
  <center><p><a href="/logout" class="linkify">Logout.</a></p></center>
+  <center><canvas id="qr" ></canvas></center>
 </div>
 
 
@@ -132,7 +136,7 @@ $("#okey").click(function() {
         data:{
           sprikey : prikey,
           receiverwallet: receiverwallet,
-  				amount:parseInt(amount)},
+  				amount:parseFloat(amount)},
         success:function(msg){
           $('#receiverwallet').val('');
           $('#amount').val('');
@@ -154,6 +158,16 @@ $("#okey").click(function() {
       });
 
 });
+
+(function() {
+             const qr = new QRious({
+               element: document.getElementById('qr'),
+               value: '{{wallet_id|escapejs}}' ,
+               size : 100,
+             });
+           })();
+
+
 
 </script>
 </body>
