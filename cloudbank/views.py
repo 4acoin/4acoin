@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+#-*- coding: utf-8" -*-
 import uuid , json , string , random, urllib, base64, os, sys, time, pickle, collections, math, arrow
 from django.utils.encoding import smart_str
 from ecdsa import SigningKey, SECP256k1, NIST384p, BadSignatureError, VerifyingKey
@@ -14,6 +14,8 @@ from cloudbank.utils import instantwallet, generate_wallet_from_pkey, generate_p
 from django.db.models import Avg, Sum, Count
 import base64, bson, websocket, hashlib
 from core.models import transaction
+from decimal import Decimal
+import simplejson as json
 from django.template.defaultfilters import stringfilter
 import netifaces as ni
 ip = ni.ifaddresses('eth0')[ni.AF_INET][0]['addr']
@@ -151,19 +153,19 @@ def sendcloudcoin(request):
             allify['explain'] = "Please fill the receiver box"
             return HttpResponse(json.dumps(allify), content_type = "application/json")
         try:
-            amount = int(request.POST.get('amount').strip())
+            amount = Decimal(request.POST.get('amount').strip())
         except ValueError:
             allify['response'] = "fail"
             allify['explain'] = "Please fill the balance box"
             return HttpResponse(json.dumps(allify), content_type = "application/json")
-        if int(amount) <= 0:
+        if amount < 0:
             allify['response'] = "fail"
-            allify['explain'] = "insufficient balance"
+            allify['explain'] = "Price can not negative"
             return HttpResponse(json.dumps(allify), content_type = "application/json")
         balance = getbalance(sender)
         if balance is None:
             balance = 0
-        if int(amount) > int(balance):
+        if Decimal(amount) > Decimal(balance):
             allify['response'] = "fail"
             allify['explain'] = "insufficient balance"
             return HttpResponse(json.dumps(allify), content_type = "application/json")

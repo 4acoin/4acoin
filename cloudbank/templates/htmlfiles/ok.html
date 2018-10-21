@@ -107,7 +107,7 @@ a:link {
 
   <center><p style="font-size:10px;">Wellcome<br> {{wallet_id}}</p></center>
   {% load humanize %}
-  <center><b><p>Balance {{balance|intcomma}} CC!</p></b></center>
+  <center><b><p>Balance {{balance|intcomma}} 4AC!</p></b></center>
 
 
 <input type="text" id="receiverwallet" placeholder="Receiver address" class="form-control myf">
@@ -138,6 +138,7 @@ $("#okey").click(function() {
           $('#amount').val('');
           if(msg["response"] == "ok"){
             Messenger().post(msg["explain"]);
+             window.location.reload();
 
           }else{
             Messenger().post(msg["explain"]);

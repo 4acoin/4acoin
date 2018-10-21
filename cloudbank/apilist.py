@@ -12,6 +12,7 @@ from django.conf import settings
 from core.models import transaction
 from django.db.models import Avg, Sum, Count, Q
 from cloudbank.utils import instantwallet, generate_wallet_from_pkey, generate_pubkey_from_prikey
+import simplejson as json
 
 
 def getwalletfrompkey(request, pkey):

@@ -11,7 +11,7 @@ from cloudbank.wsgi import application as wsgi_handler
 django.setup()
 from core.models import transaction
 from cloudbank.utils import instantwallet, generate_wallet_from_pkey, generate_pubkey_from_prikey, checkreward
-
+import simplejson as json
 import threading
 import queue as Queue
 
@@ -162,7 +162,7 @@ class MyClientProtocol(WebSocketClientProtocol):
                         receiver=payloaded["receiver"],
                         prevblockhash=transaction.objects.all().last().blockhash,
                         blockhash=payloaded["blockhash"],
-                        amount=payloaded["amount"],
+                        amount=Decimal(payloaded["amount"]),
                         nonce=payloaded["nonce"],
                         first_timestamp=payloaded["timestamp"],
                         P2PKH=payloaded["P2PKH"],
@@ -181,7 +181,7 @@ class MyClientProtocol(WebSocketClientProtocol):
                             receiver=payloaded["receiver"],
                             prevblockhash=transaction.objects.all().last().blockhash,
                             blockhash=payloaded["blockhash"],
-                            amount=payloaded["amount"],
+                            amount=Decimal(payloaded["amount"]),
                             nonce=payloaded["nonce"],
                             first_timestamp=payloaded["timestamp"],
                             P2PKH=payloaded["P2PKH"],
@@ -194,7 +194,7 @@ class MyClientProtocol(WebSocketClientProtocol):
                         receiver=payloaded["receiver"],
                         prevblockhash=transaction.objects.all().last().blockhash,
                         blockhash=payloaded["blockhash"],
-                        amount=payloaded["amount"],
+                        amount=Decimal(payloaded["amount"]),
                         nonce=payloaded["nonce"],
                         first_timestamp=payloaded["timestamp"],
                         P2PKH=payloaded["P2PKH"],

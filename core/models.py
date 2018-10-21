@@ -14,7 +14,7 @@ class transaction(models.Model):
     receiver = models.CharField(max_length=5000,null=False)
     prevblockhash = models.CharField(max_length=5000,null=False)
     blockhash = models.CharField(max_length=5000,null=False)
-    amount = models.IntegerField(null=False)
+    amount = models.DecimalField(max_digits=25, decimal_places=8, default="0",null=False)
     nonce = models.IntegerField(null=False)
     first_timestamp = models.IntegerField(null=False)
     saved_timestamp = models.DateTimeField(auto_now_add=True)

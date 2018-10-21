@@ -8,6 +8,8 @@ from datetime import datetime
 from django.template.defaultfilters import stringfilter
 import netifaces as ni
 ip = ni.ifaddresses('eth0')[ni.AF_INET][0]['addr']
+import simplejson as json
+
 
 def instantwallet():
     sk = SigningKey.generate(curve=SECP256k1)
@@ -53,7 +55,7 @@ def addreward():
     receiver=settings.NODE_OWNER_WALLET,
     prevblockhash=transaction.objects.all().last().blockhash,
     blockhash=blockhash,
-    amount=100,
+    amount=100.00000000,
     nonce=nonce,
     first_timestamp=first_timestamp,
     P2PKH=digitalSignature,
@@ -68,7 +70,7 @@ def addreward():
     "receiver":settings.NODE_OWNER_WALLET,
     "prevblockhash":transaction.objects.all().last().blockhash,
     "blockhash":blockhash,
-    "amount":100,
+    "amount":100.00000000,
     "nonce":nonce,
     "timestamp":first_timestamp,
     "P2PKH": digitalSignature,

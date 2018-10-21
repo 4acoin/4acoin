@@ -13,6 +13,7 @@ import queue as Queue
 django.setup()
 from core.models import transaction
 from cloudbank.utils import instantwallet, generate_wallet_from_pkey, generate_pubkey_from_prikey, checkreward
+import simplejson as json
 
 from autobahn.twisted.websocket import WebSocketClientProtocol, \
     WebSocketClientFactory
